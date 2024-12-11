@@ -21,7 +21,7 @@ int main(int argc, char** argv)
         printf("%d: ", res);
 
 
-        if(res < SCHAR_MAX && res > SCHAR_MIN)
+        if(res <= SCHAR_MAX && res >= SCHAR_MIN)
         {
             if(printcomma){
                 printf(", ");
@@ -32,7 +32,7 @@ int main(int argc, char** argv)
             printf("signed char");
         }
 
-        if(res < UCHAR_MAX && res >= 0)
+        if(res <= UCHAR_MAX && res >= 0)
         {
             if(printcomma){
                 printf(", ");
@@ -44,7 +44,7 @@ int main(int argc, char** argv)
         }
 
 
-        if(res < SHRT_MAX && res > SHRT_MIN)
+        if(res <= SHRT_MAX && res >= SHRT_MIN)
         {
             if(printcomma){
                 printf(", ");
@@ -55,7 +55,7 @@ int main(int argc, char** argv)
             printf("short int");
         }
 
-        if(res < USHRT_MAX && res >= 0)
+        if(res <= USHRT_MAX && res >= 0)
         {
             if(printcomma){
                 printf(", ");
@@ -66,7 +66,7 @@ int main(int argc, char** argv)
             printf("unsigned short int");
         }
 
-        if(res < INT_MAX && res > INT_MIN)
+        if(res <= INT_MAX && res >= INT_MIN)
         {
             if(printcomma){
                 printf(", ");
