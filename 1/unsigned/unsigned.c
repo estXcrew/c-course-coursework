@@ -21,7 +21,12 @@ void ucharIntervalli(unsigned char sade, unsigned char askel){
     while(value != sade)
     {
         value += askel;
-        printf(" %u", value);
+
+        if(value <= 2*sade) {
+            printf(" %u", value);
+        } else {
+            break;
+        }
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
@@ -41,7 +46,12 @@ void ushortIntervalli(unsigned short sade, unsigned short askel){
     while(value != sade)
     {
         value += askel;
-        printf(" %u", value);
+
+        if(value <= 2*sade) {
+            printf(" %u", value);
+        } else {
+            break;
+        }
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
@@ -60,7 +70,12 @@ void uintIntervalli(unsigned int sade, unsigned int askel){
     while(value != sade)
     {
         value += askel;
-        printf(" %u", value);
+
+        if(value <= 2*sade) {
+            printf(" %u", value);
+        } else {
+            break;
+        }
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
@@ -79,7 +94,12 @@ void ulongIntervalli(unsigned long sade, unsigned long askel){
     while(value != sade)
     {
         value += askel;
-        printf(" %lu", value);
+
+        if(value <= 2*sade) {
+            printf(" %lu", value);
+        } else {
+            break;
+        }
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
@@ -92,10 +112,12 @@ int main(){
     ushortIntervalli(45000, 15000);
     uintIntervalli(3300000000, 1100000000);
     ulongIntervalli(9000000000000000000, 3000000000000000000);
-/*    ucharIntervalli(40, 75);
+
+
+    ucharIntervalli(40, 75);
     ushortIntervalli(65535, 65535); 
     uintIntervalli(400000, 750000);
-    ulongIntervalli(400000000, 1500000000);*/
+    ulongIntervalli(400000000, 1500000000);
 
     return 0;
 }
