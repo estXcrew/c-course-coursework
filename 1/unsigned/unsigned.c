@@ -36,12 +36,12 @@ void ushortIntervalli(unsigned short sade, unsigned short askel){
     /*printf("started on %lu (MAX = %lu)", value, UCHAR_MAX);*/
 
     printf("unsigned short: ");
-    printf("%u ", value);
+    printf("%u", value);
 
     while(value != sade)
     {
         value += askel;
-        printf("%u ", value);
+        printf(" %u", value);
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
