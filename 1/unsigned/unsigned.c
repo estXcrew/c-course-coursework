@@ -21,7 +21,7 @@ void ucharIntervalli(unsigned char sade, unsigned char askel){
     while(value != sade)
     {
         value += askel;
-        printf("%u ", value);
+        printf(" %u", value);
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
@@ -60,7 +60,7 @@ void uintIntervalli(unsigned int sade, unsigned int askel){
     while(value != sade)
     {
         value += askel;
-        printf("%u ", value);
+        printf(" %u", value);
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
