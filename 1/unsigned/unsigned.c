@@ -22,7 +22,7 @@ void ucharIntervalli(unsigned char sade, unsigned char askel){
     {
         value += askel;
 
-        if(value <= 2*sade) {
+        if(value <=2UL*(unsigned long)sade) {
             printf(" %u", value);
         } else {
             break;
@@ -47,7 +47,7 @@ void ushortIntervalli(unsigned short sade, unsigned short askel){
     {
         value += askel;
 
-        if(value <= 2*sade) {
+        if(value <= 2UL*(unsigned long)sade) {
             printf(" %u", value);
         } else {
             break;
@@ -71,7 +71,7 @@ void uintIntervalli(unsigned int sade, unsigned int askel){
     {
         value += askel;
 
-        if(value <= 2*sade) {
+        if(value <= (2UL*(unsigned long)sade)) {
             printf(" %u", value);
         } else {
             break;
@@ -95,7 +95,7 @@ void ulongIntervalli(unsigned long sade, unsigned long askel){
     {
         value += askel;
 
-        if(value <= 2*sade) {
+        if(value <= (unsigned long)2*sade) {
             printf(" %lu", value);
         } else {
             break;
