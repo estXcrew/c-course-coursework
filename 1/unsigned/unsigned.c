@@ -16,11 +16,12 @@ void ucharIntervalli(unsigned char sade, unsigned char askel){
     /*printf("started on %lu (MAX = %lu)", value, UCHAR_MAX);*/
 
     printf("unsigned char: ");
+    printf("%u ", value);
 
     while(value != sade)
     {
+        value += askel;
         printf("%u ", value);
-                value += askel;
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
@@ -35,11 +36,12 @@ void ushortIntervalli(unsigned short sade, unsigned short askel){
     /*printf("started on %lu (MAX = %lu)", value, UCHAR_MAX);*/
 
     printf("unsigned short: ");
+    printf("%u ", value);
 
     while(value != sade)
     {
+        value += askel;
         printf("%u ", value);
-                value += askel;
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
@@ -53,11 +55,12 @@ void uintIntervalli(unsigned int sade, unsigned int askel){
     /*printf("started on %lu (MAX = %lu)", value, UCHAR_MAX);*/
 
     printf("unsigned int: ");
+    printf("%u ", value);
 
     while(value != sade)
     {
+        value += askel;
         printf("%u ", value);
-                value += askel;
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
@@ -71,11 +74,12 @@ void ulongIntervalli(unsigned long sade, unsigned long askel){
     /*printf("started on %lu (MAX = %lu)", value, UCHAR_MAX);*/
 
     printf("unsigned long: ");
+    printf("%lu ", value);
 
     while(value != sade)
     {
+        value += askel;
         printf("%lu ", value);
-                value += askel;
     }
     /*printf("broke on %lu", value);*/
     printf("\n");
