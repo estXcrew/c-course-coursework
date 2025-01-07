@@ -28,10 +28,10 @@ void scharBitit(signed char x)
         }
     }
 
-    printf("Binary: %s\n", binary);
-    printf("Count of 1s: %d\n", count_ones);
-    printf("Count of 0s: %d\n", count_zeros);
-}
+    printf("%d\n", x);
+    printf("%s\n", binary);
+    printf("%d\n", count_zeros);
+    printf("%d\n", count_ones);}
 
 void shortBitit(short int x)
 {
@@ -49,10 +49,10 @@ void shortBitit(short int x)
         }
     }
 
-    printf("Binary: %s\n", binary);
-    printf("Count of 1s: %d\n", count_ones);
-    printf("Count of 0s: %d\n", count_zeros);
-
+    printf("%d\n", x);
+    printf("%s\n", binary);
+    printf("%d\n", count_zeros);
+    printf("%d\n", count_ones);
 }
 
 void intBitit(int x)
@@ -70,9 +70,10 @@ void intBitit(int x)
         }
     }
 
-    printf("Binary: %s\n", binary);
-    printf("Count of 1s: %d\n", count_ones);
-    printf("Count of 0s: %d\n", count_zeros);
+    printf("%d\n", x);
+    printf("%s\n", binary);
+    printf("%d\n", count_zeros);
+    printf("%d\n", count_ones);
 }
 
 void longBitit(long int x)
@@ -90,8 +91,9 @@ void longBitit(long int x)
         }
     }
 
-    printf("Binary: %s\n", binary);
-    printf("Count of 1s: %d\n", count_ones);
-    printf("Count of 0s: %d\n", count_zeros);
+    printf("%ld\n", x);
+    printf("%s\n", binary);
+    printf("%d\n", count_zeros);
+    printf("%d\n", count_ones);
 }
 
