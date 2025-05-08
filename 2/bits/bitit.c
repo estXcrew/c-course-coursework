@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdio.h>
 
+/*
 int main() {
     scharBitit(5);
     shortBitit(5);
@@ -11,7 +12,7 @@ int main() {
     longBitit(5);
 
     return 0;
-}
+}*/
 
 void scharBitit(signed char x)
 {
