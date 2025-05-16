@@ -104,7 +104,7 @@ Kertotaulu* luoKertotaulu(uint a, uint b, uint c, uint d)
 void tuhoaKertotaulu(Kertotaulu *kt)
 {
     int i;
-    for(i=0; i<(kt->b-kt->a); i++)
+    for(i=0; i<(kt->b-kt->a)+2; i++)
     {
         free(kt->kertotaulu[i]);
     }
