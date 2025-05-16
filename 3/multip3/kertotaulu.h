@@ -13,6 +13,7 @@ typedef struct {
     uint** kertotaulu;
 } Kertotaulu;
 
-Kertotaulu * luoKertotaulu(uint a, uint b, uint c, uint d);
+Kertotaulu* luoKertotaulu(uint a, uint b, uint c, uint d);
+void tuhoaKertotaulu(Kertotaulu *kt);
 
 #endif

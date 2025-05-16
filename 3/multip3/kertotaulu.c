@@ -101,3 +101,13 @@ Kertotaulu* luoKertotaulu(uint a, uint b, uint c, uint d)
     return krt;
 }
 
+void tuhoaKertotaulu(Kertotaulu *kt)
+{
+    int i;
+    for(i=0; i<(kt->b-kt->a); i++)
+    {
+        free(kt->kertotaulu[i]);
+    }
+    free(kt->kertotaulu);
+    free(kt);
+}
