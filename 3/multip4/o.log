@@ -1,0 +1,92 @@
+width of widest val 34: 4
+width of widest val 51: 4
+width of widest val 68: 4
+width of widest val 85: 4
+width of widest val 102: 5
+width of widest val 119: 5
+width of widest val 136: 5
+width of widest val 153: 5
+line width 37!
+nr of lines: 8 
+allocating buffer of 296 bytes.. 
+printing 2 @ 4
+printing 3 @ 8
+printing 4 @ 12
+printing 5 @ 16
+printing 6 @ 21
+printing 7 @ 26
+printing 8 @ 31
+printing 9 @ 36
+printing 22 @ 42
+printing 33 @ 46
+printing 44 @ 50
+printing 55 @ 54
+printing 66 @ 59
+printing 77 @ 64
+printing 88 @ 69
+printing 99 @ 74
+ended col at width 77..
+printing 24 @ 81
+printing 36 @ 85
+printing 48 @ 89
+printing 60 @ 93
+printing 72 @ 98
+printing 84 @ 103
+printing 96 @ 108
+printing 108 @ 113
+ended col at width 117..
+printing 26 @ 121
+printing 39 @ 125
+printing 52 @ 129
+printing 65 @ 133
+printing 78 @ 138
+printing 91 @ 143
+printing 104 @ 148
+printing 117 @ 153
+ended col at width 157..
+printing 28 @ 161
+printing 42 @ 165
+printing 56 @ 169
+printing 70 @ 173
+printing 84 @ 178
+printing 98 @ 183
+printing 112 @ 188
+printing 126 @ 193
+ended col at width 197..
+printing 30 @ 201
+printing 45 @ 205
+printing 60 @ 209
+printing 75 @ 213
+printing 90 @ 218
+printing 105 @ 223
+printing 120 @ 228
+printing 135 @ 233
+ended col at width 237..
+printing 32 @ 241
+printing 48 @ 245
+printing 64 @ 249
+printing 80 @ 253
+printing 96 @ 258
+printing 112 @ 263
+printing 128 @ 268
+printing 144 @ 273
+ended col at width 277..
+printing 34 @ 281
+printing 51 @ 285
+printing 68 @ 289
+printing 85 @ 293
+printing 102 @ 298
+printing 119 @ 303
+printing 136 @ 308
+printing 153 @ 313
+ended col at width 317..
+       2   3   4    5    6    7    89
+  11  22  33  44   55   66   77   8899
+  12  24  36  48   60   72   84   96108
+  13  26  39  52   65   78   91  104117
+  14  28  42  56   70   84   98  112126
+  15  30  45  60   75   90  105  120135
+  16  32  48  64   80   96  112  128144
+  17  34  51  68   85  102  119  136153
+
+returning ..

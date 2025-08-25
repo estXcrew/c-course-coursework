@@ -15,7 +15,7 @@ all: $(OUTPUT)
 
 $(OUTPUT): $(SOURCES)
 	$(CC) $(CFLAGS) -o $(OUTPUT).elf $(SOURCES) 
-	./$(OUTPUT).elf 
+	./$(OUTPUT).elf 2 9 11 17
 
 # Clean target to remove the executable
 clean:
