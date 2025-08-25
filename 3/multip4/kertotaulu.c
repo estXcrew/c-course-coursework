@@ -25,11 +25,12 @@ char **luo_kertotaulu_mjt(uint a, uint b, uint c, uint d)
     uint table_idx;
     uint snprint_retval = 0;
     char* chartable;
+    uint** row_table;
 
     uint* cols_w = (uint*) malloc(sizeof(uint)*NR_COLS);
 
     cols_w[0] = count_digits(d);
-    for(j=1; j<NR_COLS; j++)
+    for(j=1; j<=NR_COLS; j++)
     {
         col_widest_val = (uint)(d*(a+j-1));
         cols_w[j] = count_digits(col_widest_val);
@@ -39,9 +40,13 @@ char **luo_kertotaulu_mjt(uint a, uint b, uint c, uint d)
 
     printf("line width %d!\r\n", line_width);
     printf("nr of lines: %d \r\n", NR_ROWS);
-    printf("allocating buffer of %d bytes.. \r\n", NR_ROWS*line_width*sizeof(char));
+    printf("allocating buffer of %d bytes.. \r\n", NR_ROWS*line_width*sizeof(char) + 1);
 
-    chartable = (char*)malloc(NR_ROWS*line_width*sizeof(char));
+    /* allocate table of row charpointers*/
+    row_table = (char**)malloc(NR_ROWS*sizeof(char*));
+    //chartable = (char*)malloc(NR_ROWS*line_width*sizeof(char) + 1);
+
+    
 
     table_idx = 0;
     snprint_retval = sprintf(chartable + table_idx, "%*s", cols_w[0], "");
