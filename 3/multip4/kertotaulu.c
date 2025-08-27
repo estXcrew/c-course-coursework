@@ -11,83 +11,52 @@ int count_digits(unsigned int n)
         digits++;
         n /= 10;
     } while (n > 0);
-    return digits+2;
+    return digits;
 }
-
 char **luo_kertotaulu_mjt(uint a, uint b, uint c, uint d)
 {
-    setvbuf(stdout, NULL, _IONBF, 0);
     uint col_widest_val;
     uint32_t i, j;
-    const uint32_t NR_COLS = b-a + 2;
-    const uint32_t NR_ROWS = d-c + 2;
-    uint32_t line_width = 1u; 
-    uint table_idx;
-    uint snprint_retval = 0;
-    char* chartable;
-    uint** row_table;
+    const uint32_t NR_COLS = (b - a + 1) + 1; /* include header */
+    const uint32_t NR_ROWS = (d - c + 1) + 1; /* include header */
+    uint32_t line_width = 0; 
+    char **row_table;
+    char *p;
 
-    uint* cols_w = (uint*) malloc(sizeof(uint)*NR_COLS);
+    uint *cols_w = (uint *)malloc(sizeof(uint) * NR_COLS);
 
-    cols_w[0] = count_digits(d);
-    for(j=1; j<=NR_COLS; j++)
-    {
-        col_widest_val = (uint)(d*(a+j-1));
-        cols_w[j] = count_digits(col_widest_val);
+    cols_w[0] = count_digits(d); /* width of row header */
+    for (j = 1; j < NR_COLS; j++) {
+        col_widest_val = (uint)(d * (a + j - 1));
+        cols_w[j] = count_digits(col_widest_val) +1;
         line_width += cols_w[j];
-        printf("width of widest val %d: %d\n", col_widest_val, cols_w[j]);
+    }
+    line_width += cols_w[0];
+
+    /* allocate table of row char-pointers */
+    row_table = (char **)malloc(NR_ROWS * sizeof(char *));
+    for (i = 0; i < NR_ROWS; i++) {
+        row_table[i] = malloc(sizeof(char) * (line_width + 1)); /* +1 for '\0' */
     }
 
-    printf("line width %d!\r\n", line_width);
-    printf("nr of lines: %d \r\n", NR_ROWS);
-    printf("allocating buffer of %d bytes.. \r\n", NR_ROWS*line_width*sizeof(char) + 1);
-
-    /* allocate table of row charpointers*/
-    row_table = (char**)malloc(NR_ROWS*sizeof(char*));
-    //chartable = (char*)malloc(NR_ROWS*line_width*sizeof(char) + 1);
-
-    
-
-    table_idx = 0;
-    snprint_retval = sprintf(chartable + table_idx, "%*s", cols_w[0], "");
-    table_idx += snprint_retval;
-
-    for(j=a; j<=b; j++)
-    {
-        col_widest_val = j;
-        printf("printing %d @ %d\r\n", col_widest_val, table_idx);
-        snprint_retval = sprintf(chartable + table_idx, "%*d", cols_w[j], col_widest_val);
-        table_idx += snprint_retval;
+    /* top header row */
+    p = row_table[0];
+    p += sprintf(p, "%*s", cols_w[0], "");
+    for (j = a; j <= b; j++) {
+        p += sprintf(p, "%*u", cols_w[j - a + 1], (uint)j);
     }
+    *p = '\0';
 
-    sprintf(chartable + table_idx, "\n");
-    table_idx++;
-
-    for(i=c; i<=d; i++)
-    {
-        col_widest_val = i;
-        snprint_retval = sprintf(chartable + table_idx, "%*d", cols_w[0], col_widest_val);
-        table_idx += snprint_retval;
-        
-        for(j=a; j<=b; j++)
-        {
-            col_widest_val = i*j;
-            printf("printing %d @ %d\r\n", col_widest_val, table_idx);
-            snprint_retval = sprintf(chartable + table_idx, "%*d", cols_w[j], col_widest_val);
-            table_idx += snprint_retval;
+    /* data rows */
+    for (i = c; i <= d; i++) {
+        char *q = row_table[i - c + 1];
+        q += sprintf(q, "%*u", cols_w[0], (uint)i);
+        for (j = a; j <= b; j++) {
+            q += sprintf(q, "%*u", cols_w[j - a + 1], (uint)(i * j));
         }
-
-        sprintf(chartable + table_idx, "\n");
-        table_idx++;
-
-        printf("ended col at width %u..\r\n", table_idx);
+        *q = '\0';
     }
 
     free(cols_w);
-
-    printf("%s\n", chartable);
-
-    printf("returning ..\r\n");
-    fflush(stdout);
-    return &chartable;
+    return row_table;
 }
