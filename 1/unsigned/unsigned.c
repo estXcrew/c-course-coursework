@@ -95,7 +95,7 @@ void ulongIntervalli(unsigned long sade, unsigned long askel){
     {
         value += askel;
 
-        if(value <= (unsigned long)2*sade) {
+        if(value <= (2UL*(unsigned long)sade)) {
             printf(" %lu", value);
         } else {
             break;
