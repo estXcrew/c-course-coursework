@@ -40,7 +40,7 @@ void viikko(int pv, int kk, int vuosi) {
     char buffer[30];
 
     int i;
-    
+    int weekday;
     memset(&tm, 0, sizeof(struct tm));
 
     tm.tm_year = vuosi-1900;
@@ -52,11 +52,13 @@ void viikko(int pv, int kk, int vuosi) {
     /*printf("input date: %s", asctime(&tm));*/
 
     tm_autogen = localtime(&timestamp);
+    /* get monday-idx0 week instead of sunday-first*/
+    weekday = (tm_autogen->tm_wday + 6) % 7;
 
     /*printf("autogen: wday: %d\n", tm_autogen->tm_wday);*/
     
 
-    for (i = 0; i < ((tm_autogen->tm_wday)-1); i++) {
+    for (i = 0; i < weekday; i++) {
         tm.tm_mday--;      /* step back one day */
         mktime(&tm);       /* normalize month/year change */
     }
